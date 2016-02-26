@@ -7,7 +7,7 @@
 
 Name:             %{?scl_prefix}%{pkg_name}
 Version:          2.1
-Release:          14.11%{?dist}
+Release:          14.12%{?dist}
 Summary:          Java EE: Java API for XML Remote Procedure Call v1.1
 License:          ASL 2.0 and W3C
 
@@ -18,7 +18,7 @@ Patch1:           use_parent_pom.patch
 BuildArch:        noarch
 
 BuildRequires:    %{?scl_prefix_java_common}javapackages-tools
-BuildRequires:    %{?scl_prefix_java_common}maven-local
+BuildRequires:    %{?scl_prefix}maven-local
 BuildRequires:    %{?scl_prefix}geronimo-parent-poms
 BuildRequires:    %{?scl_prefix}maven-resources-plugin
 BuildRequires:    %{?scl_prefix}geronimo-saaj
@@ -75,6 +75,9 @@ set -e -x
 %doc LICENSE NOTICE
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 2.1-14.12
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 2.1-14.11
 - maven33 rebuild #2
 
